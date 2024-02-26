@@ -138,7 +138,7 @@ func TestFileBigReadN(t *testing.T) {
 	file, err := client.Open("/_test/mobydick.txt")
 	require.NoError(t, err)
 
-	n, err := io.CopyN(ioutil.Discard, file, 1000000)
+	n, err := io.CopyN(io.Discard, file, 1000000)
 	assert.NoError(t, err)
 	assert.EqualValues(t, n, 1000000)
 }
