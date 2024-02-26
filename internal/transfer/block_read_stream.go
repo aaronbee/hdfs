@@ -9,7 +9,7 @@ import (
 	"math"
 
 	hdfs "github.com/aristanetworks/hdfs/v2/internal/protocol/hadoop_hdfs"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 var errInvalidChecksum = errors.New("invalid checksum")
