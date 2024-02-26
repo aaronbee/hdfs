@@ -20,9 +20,9 @@ const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 func newClientID() []byte {
 	id := make([]byte, 16)
 
-	rand.Seed(time.Now().UTC().UnixNano())
+	r := rand.New(rand.NewSource(time.Now().UTC().UnixNano()))
 	for i := range id {
-		id[i] = chars[rand.Intn(len(chars))]
+		id[i] = chars[r.Intn(len(chars))]
 	}
 
 	return id
